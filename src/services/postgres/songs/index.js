@@ -73,7 +73,7 @@ class Index {
         if (!result.rows.length) {
             throw new NotFoundError('songs tidak ditemukan');
         }
-        return result.rows.map(songMapDBToModel)[0];
+        return songMapDBToModel(result.rows[0]);
     }
 
     async editSongById(id, { title,year,performer,genre,duration,albumId }) {
