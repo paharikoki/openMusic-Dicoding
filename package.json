@@ -1,0 +1,31 @@
+{
+  "name": "openMusic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Paharikoki",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
+    "test": "jest",
+    "lint": "eslint ./src",
+    "migrate": "node-pg-migrate"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "jest": "^29.6.2",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2",
+    "auto-bind": "4",
+    "dotenv": "^16.3.1",
+    "joi": "^17.9.2",
+    "nanoid": "3.x.x",
+    "node-pg-migrate": "^6.2.2",
+    "pg": "^8.11.2"
+  }
+}
