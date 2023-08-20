@@ -64,7 +64,6 @@ class Index {
                 performer: song.performer,
             })),
         };
-        console.log(songs.length)
         return albumWithSongs
     }
     async editAlbumById(id, { name, year }) {

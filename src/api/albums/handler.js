@@ -1,4 +1,4 @@
-const ClientError = require('../../exceptions/ClientError');
+require('../../exceptions/ClientError');
 const AutoBind = require('auto-bind');
 class AlbumHandler {
     constructor(service, validator) {
@@ -35,7 +35,7 @@ class AlbumHandler {
         };
     }
 
-    async getAlbumByIdHandler(request, h) {
+    async getAlbumByIdHandler(request) {
             const { id } = request.params;
             const album = await this._service.getAlbumById(id);
             return {
@@ -46,7 +46,7 @@ class AlbumHandler {
             };
     }
 
-    async putAlbumByIdHandler(request, h) {
+    async putAlbumByIdHandler(request) {
             this._validator.validateAlbumPayload(request.payload);
             const { id } = request.params;
             const { name, year } = request.payload;
@@ -59,7 +59,7 @@ class AlbumHandler {
             };
     }
 
-    async deleteAlbumByIdHandler(request, h) {
+    async deleteAlbumByIdHandler(request) {
             const { id } = request.params;
 
             await this._service.deleteAlbumById(id);
